@@ -1,0 +1,14 @@
+mport React from 'react';
+import MessageList from './MessageList';
+import UserInput from './UserInput';
+
+const ChatWindow = ({ messages, onSend }) => {
+  return (
+    <div className="chat-window">
+      <MessageList messages={messages} />
+      <UserInput onSend={onSend} />
+    </div>
+  );
+};
+
+export default ChatWindow;
