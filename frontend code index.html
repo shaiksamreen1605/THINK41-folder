@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>E-Commerce Chatbot</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;  }
+        .chat-container {
+            background: #fff;
+            padding: 20px;
+            width: 350px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            text-align: center;
+        }
+        h2 {
+            margin-bottom: 10px;
+        }
+        #messages {
+            text-align: left;
+            height: 200px;
+            overflow-y: auto;
+            margin-bottom: 10px;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 6px;
+        }
+        input[type="text"] {
+            width: 70%;
+            padding: 8px;
+        }
+        button {
+            padding: 8px 12px;
+            background: #007bff;
+            color: white;
+            border: none;
+            cursor: pointer;
+            border-radius: 4px;
+        }
+        button:hover {
+            background: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <div class="chat-container">
+        <h2>E-Commerce Chatbot</h2>
+        <div id="messages">
+            <p><strong>Example questions:</strong></p>
+            <p>• What are the top 5 most sold products?</p>
+            <p>• Show me the status of order ID 12345.</p>
+            <p>• How many Classic T-Shirts are left in stock?</p>
+        </div>
+        <input type="text" id="userInput" placeholder="Type your question..." />
+        <button onclick="sendMessage()">Send</button>
+    </div>
+
+    <script>
+        function sendMessage() {
+            const input = document.getElementById('userInput').value;
+            if (input.trim() !== "") {
+                const messagesDiv = document.getElementById('messages');
+                const newMessage = document.createElement('p');
+                newMessage.textContent = "You: " + input;
+                messagesDiv.appendChild(newMessage);
+                document.getElementById('userInput').value = "";
+            }
+        }
+    </script>
+</body>
+</html>
